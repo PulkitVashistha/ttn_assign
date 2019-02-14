@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ajax Row Delete</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+span {
+	background-color: slateBlue;
+	color: white;
+	font-weight: 900;
+}
+
+</style>
+<script lang="javascript">
+var eid;
+$(document).ready(function(){
+
+ $(":button").click(function(){
+	eid=$(this).attr("id");
+	eid="#R"+eid;
+    $.ajax({url: "https://jsonplaceholder.typicode.com/todos/1", success: function(result){ 
+	$(eid).remove();
+    }});
+  });
+
+});
+
+
+</script>
+</head>
+<body>
+<br />
+<table border="1px" id="test">
+	<tr>
+		<td>Id</td>
+		<td>Name</td>
+		<td>Location</td>
+	</tr>
+	<tr id="R100">
+		<td>100</td>
+		<td>Shubham</td>
+		<td>Delhi</td>
+		<td><input type="button" id="100" value=" X " /></td>
+	<tr>
+	<tr id="R101">
+		<td>101</td>
+		<td>Kunal</td>
+		<td>Lucknow</td>
+		<td><input type="button" id="101" value=" X " /></td>
+	<tr>
+	<tr id="R102">
+		<td>102</td>
+		<td>Ujjwal</td>
+		<td>Mumbai</td>
+		<td><input type="button" id="102" value=" X " /></td>
+	<tr>
+	<tr id="R103">
+		<td>103</td>
+		<td>Shakti</td>
+		<td>Sri Nagar</td>
+		<td><input type="button" id="103" value=" X " /></td>
+	<tr>
+</table>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Simple Interest</title>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+</style>
+<script lang="javascript">
+function funcSimpleInterest() {
+	var p=prompt("Enter principal amount: ","");
+	var r=prompt("Enter rate(%): ","");
+	var t=prompt("Enter time(years): ","");
+	var si=p*r*t/100;
+	document.getElementById("data").innerHTML="Principal Amount: "+p+"<br />Rate of Interest: "+r+"%<br />Time: "+t+" years";
+	document.getElementById("result").innerHTML="Simple Interest: "+si;
+}
+</script>
+</head>
+<body>
+<h2>Calculate Simple Interest</h2>
+<p><input type="button" onClick="funcSimpleInterest()" value="Calculate" /></p>
+<p id="data">Click button above to enter required data.</p>
+<p id="result"></p>
+</body>
+</html>

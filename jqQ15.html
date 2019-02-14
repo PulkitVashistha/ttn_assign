@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Ajax Call</title>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+span {
+	background-color: slateBlue;
+	color: white;
+	font-weight: 900;
+}
+
+</style>
+<script lang="javascript">
+var arr=new Array();
+$(document).ready(function(){
+
+ $("button").click(function(){
+    $.ajax({url: "https://jsonplaceholder.typicode.com/todos/1", success: function(result){
+    	var data=JSON.stringify(result);
+	var temp="<tr><td>"+result.userId+"</td><td>"+result.id+"</td><td>"+result.title+"</td></tr>"
+	$("#test").append(temp);
+      	$("#output").html(data);
+    }});
+  });
+
+});
+
+
+</script>
+</head>
+<body>
+<br />
+<button id="button">Click</button>
+<table border="1px" id="test">
+	<tr>
+		<td>User Id</td>
+		<td>Id</td>
+		<td>Title</td>
+	</tr>
+</table>
+</body>
+</html>

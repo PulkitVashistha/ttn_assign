@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Palindrome String</title>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+</style>
+<script lang="javascript">
+function funcCheckPalindrome() {
+	var stringData=document.getElementById("txtData").value;
+	if(stringData.length>=2) {
+		var res=checkPal(stringData,stringData.length);
+		if(res==true) {
+			document.getElementById("output").innerHTML="<span style='color: green'>String <strong>"+stringData+"</strong> is a palindrome.</span>";
+		} else {
+			document.getElementById("output").innerHTML="<span style='color: red'>String <strong>"+stringData+"</strong> is not a palindrome.</span>";
+		}
+	} else {
+		document.getElementById("output").innerHTML="String must be atleast of length 2.";
+	}
+}
+function checkPal(strData,strLength) {
+	cRev=strLength-1;
+	for(i=0;i<strLength;i++,cRev--) {
+		if(strData[i]==strData[cRev]) {
+		} else {
+			return false;
+		}
+	}
+	return true;
+}
+</script>
+</head>
+<body>
+<h2>Palindrome String Validator</h2>
+<p>Enter any string: <input type="text" name="txtData" id="txtData" /></p>
+<p><input type="button" onClick="funcCheckPalindrome()" value="Validate" /></p>
+<p id="output">Enter any string and click button above.</p>
+</body>
+</html>

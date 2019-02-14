@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Area of Circle</title>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+</style>
+<script lang="javascript">
+function funcAreaOfCircle() {
+	var radius=document.getElementById("txtRadius").value;
+	if(radius.length>0) {
+		if(isNaN(radius)==false) {		
+			var aoc=radius*radius*3.14;
+			document.getElementById("output").innerHTML="<span style='color: blue'>Area of cirle of radius <strong>"+radius+"</strong> is ::</span> "+aoc;
+		} else {
+			document.getElementById("output").innerHTML=radius+" is not a valid numeric value.";
+		}
+	} else {
+		alert('Value must be provided.');	
+	}
+}
+</script>
+</head>
+<body>
+<h2>Area of Circle</h2>
+<p>Enter radius of circle: <input type="text" name="txtRadius" id="txtRadius" /></p>
+<p><input type="button" onClick="funcAreaOfCircle()" value="Calculate" /></p>
+<p id="output">Enter radius of circle and click button above.</p>
+</body>
+</html>

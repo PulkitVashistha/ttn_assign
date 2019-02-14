@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"> 
+<head>
+<title>Object Copy with console.log</title>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+</style>
+<script lang="javascript">
+var student={};
+var student_copy={}
+function objCreate() {
+	student={"id":"1001","name":"Shubham Kumar","age":"24"};
+	alert('Object student created!');
+}
+function objConsoleLog() {
+	console.log(student);
+	alert('Press F12 to view student object in console log.');
+}
+function objCopy() {
+	for(var i in student) {
+		student_copy[i]=student[i];	
+	}
+	console.log(student_copy);
+	alert('Object copied successfully! Press F12 to view student_copy object in console log.');
+}
+
+</script>
+</head>
+<body>
+<h2>Object copy with console.log</h2>
+<p>Object: student(id=1001,name="Shubham Kumar",age=24)</p>
+<p>Create <strong>student</strong> object: <input type="button" onClick="objCreate()" value="Create Object" /></p>
+<p>Print <strong>student</strong> object to console log: <input type="button" onClick="objConsoleLog()" value="Console Log" /></p>
+<p>Copy <strong>student</strong> object to <strong>student_copy</strong>: <input type="button" onClick="objCopy()" value="Copy Object" /></p>
+</body>
+</html>

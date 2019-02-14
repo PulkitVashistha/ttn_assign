@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Bug Report</title>
+<style>
+<style>
+body{
+	margin: 0;
+	padding: 0;
+	background-color: #333333;
+	font-size: 18px;
+}
+#page {
+	width: 80%;
+	margin: 0px auto;
+}
+#head {
+	height: 40px;
+}
+#title {
+	width: 50%;
+	float: left;
+	margin: 0px;
+	font-size: 25px;
+	font-weight: 900;
+	color: #00e6ac;
+}
+#menu {
+	width: 50%;
+	float: right;
+	text-align: right;
+}
+#menu a {
+	color: #00e6ac;
+	text-decoration: none;
+}
+hr {
+	color: #f0f5f5;
+}
+#bug-form {
+	width: 50%;
+	margin: 0px auto;
+	border-radius: 5px 5px 5px 5px;
+	border: 1px groove #e0e0d1;
+}
+#bug-form span {
+	display: block;
+	font-size: 12px;
+}
+.pad {
+	padding-left: 20px;
+	padding-right: 20px;
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+#f-title {
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	color: white;
+	font-weight: 900;
+	background-color: #00264d;
+	opacity: 0.5;
+	border-radius: 5px 5px 0px 0px;
+}
+#f-foot {
+	margin-top: 40px;
+	height: 40px;
+	line-height: 40px;
+	font-size: 18px;
+	color: white;
+	text-align: right;
+	font-weight: 900;
+	background-color: #cccccc;
+	border-radius: 0px 0px 5px 5px;
+}
+/*#f-input-1, #f-input-2, #f-input-3, #f-input-4,#f-input-5, #f-input-6, #f-input-7  {
+	margin: 0px auto;
+}*/
+.rBox {
+	width: 50%;
+	margin: 0px;
+}
+.r1 {
+	float:left;
+}
+.r2 {
+	float: right;
+	text-align: left;
+}
+.btnBox {
+	width: 75px;
+	height: 25px;
+	font-size: 15px;
+	background-color: #009999;
+	border: 0px;
+	color: white;
+	border-radius: 5px 5px 5px 5px;
+}
+.txtBox {
+	width: 100%;
+	border-radius: 5px 5px 5px 5px;
+	height: 30px;
+	font-size: 18px;
+}
+.version {
+	width: 75px;
+}
+textarea {
+	overflow-x: none;
+	border-radius: 5px 5px 5px 5px;
+	height: 75px;
+	width: 100%;
+}
+select {
+	width: 100%;
+	border-radius: 5px 5px 5px 5px;
+	background-color: #009999;
+	height: 30px;
+	font-size: 15px;
+	color: white;
+}
+#file-upload {
+	width: 100%;
+}
+#fu {
+	display: none;
+}
+
+#fu-name {
+	width: 70%;
+	float: left;
+	height: 30px;
+	text-align: left;
+	line-height: 30px;
+	vertical-align:middle;
+	opacity: 0.5;	
+	border-top: 1px solid black;
+	border-bottom: 1px solid black;
+	color: #00264d;
+	margin: 0px;
+	border-radius: 5px 0px 0px 5px;
+}
+#fu-button {
+	background-color: #00264d;
+	border-radius: 0px 5px 5px 0px;
+	height: 30px;
+	text-align: center;
+	line-height: 30px;
+	vertical-align:center;
+	opacity: 0.5;
+	float: right;
+	width: 30%;
+	color: white;
+}
+</style>
+</head>
+<body>
+<div id="page">
+	<div id="head">
+		<div id="title">TO THE NEW</div>
+		<div id="menu"><a href="">Home</a> <a href="">Quick Help</a></div>
+	</div>
+	<hr />	
+	<form action="" method="post" name="bug-form">
+	<div id="bug-form">
+		<div id="f-title" class="pad">Bug Report</div>
+		<div id="f-input-1" class="pad">
+			<span>Title:*</span>
+			<input type="text" name="txtTitle" class="txtBox" />		
+		</div>
+		<div id="f-input-2" class="pad">
+			<span>Description:*</span>
+			<textarea type="text" name="txtDescription"></textarea>		
+		</div>
+		<div id="f-input-3" class="pad">
+			<span>Operating System:</span>
+			<select name="selOS">
+				<option value="win-xp" selected>Windows XP</option>
+				<option value="linux">Linux</option>
+				<option value="mac-os">Mac OS X</option>
+			</select>		
+		</div>
+		<div id="f-input-4" class="pad">
+			<span>Product:*</span>
+			<select name="selProduct">
+				<option value="formoid" selected>Formoid</option>
+				<option value="mobile-app">Mobile Application</option>
+				<option value="desktop-app">Desktop Application</option>
+			</select>		
+		</div>
+		<div id="f-input-5" class="pad">
+			<span>Version:*</span>
+			<input type="text" name="txtVersion" class="txtBox version" />		
+		</div>
+		<div id="f-input-6" class="pad">
+			<span>License:</span>
+			<div class="rBox r1"><input type="radio" name="lic" />Free</div><div class="rBox r2"><input type="radio" name="lic" />Business</div>		
+		</div>
+		<div id="f-input-7" class="pad">
+			<span>Saverity:*</span>
+			<select name="selSaverity">
+				<option value="c" selected>Critical</option>
+				<option value="m">Moderate</option>
+				<option value="l">Low</option>
+			</select>		
+		</div>
+		<div id="f-input-8" class="pad">
+			<span>Attachments:</span>
+			<div id="file-upload">
+				<div id="fu-name">No file selected</div><div id="fu-button"><input id="fu" type="file" /><label for="fu" class="fu-upload">Choose File</label></div>		
+			</div>		
+		</div>
+		<div id="f-foot" style="clear: both;" class="pad"><input type="submit" class="btnBox" value="Send" ></div>
+	</div>
+	</form>
+</div>
+</body>
+</html>

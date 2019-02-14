@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<html>
+<meta charset="UTF-8"> 
+<head>
+<title>Object Query</title>
+<style>
+body {
+	width: 80%;
+	margin: 0px auto;
+}
+tr,td {
+	padding: 5px;
+}
+</style>
+<script lang="javascript">
+var employee={};
+var emp=new Object();
+var cnt=0;
+function objCreate() {
+	var name=document.getElementById("txtName").value;
+	var age=document.getElementById("txtAge").value;
+	var salary=document.getElementById("txtSalary").value;
+	var dob=document.getElementById("txtDOB").value;
+	
+	if(name.length>0 && age.length>0 && salary.length>0 && dob.length>0) {
+		employee[cnt]={"name":name,"age":age,"salary":salary,"dob":dob};
+		console.log(employee[cnt]);
+		//Clear Fields
+		document.getElementById("txtName").value='';
+		document.getElementById("txtAge").value='';
+		document.getElementById("txtSalary").value='';
+		document.getElementById("txtDOB").value='';
+		cnt++;
+		alert('Successfully Added! Add next employee details.');
+	} else {
+		alert('All details are required to create object.');
+	}
+}
+function objDisplay() {
+	var tempVALUE="<strong>EMPLOYEE DISPLAY</strong><br />";
+	for(var i in employee) {
+		tempVALUE=tempVALUE+"Name: "+employee[i].name+" Age: "+employee[i].age+" Salary: "+employee[i].salary+" DOB: "+employee[i].dob+"<br />";
+	}
+	document.getElementById("output").innerHTML=tempVALUE;
+}
+function objSalaryG5000() {
+	var tempVALUE="<strong>EMPLOYEE WHOSE SALARY > 5000</strong><br />";
+	for(var i in employee) {
+		if(employee[i].salary >= 5000) {
+			tempVALUE=tempVALUE+"Name: "+employee[i].name+" Age: "+employee[i].age+" Salary: "+employee[i].salary+" DOB: "+employee[i].dob+"<br />";
+		}	
+	}
+	document.getElementById("output").innerHTML=tempVALUE;
+}
+function objGroupByAge() {
+	for(var i in employee) {
+		if(employee[i].age in emp){
+			emp[employee[i].age].push(employee[i]);
+		} else {
+			let arr=new Array();
+			arr.push(employee[i]);
+			emp[employee[i].age]=arr;
+		}
+	}
+	console.log(emp);
+	alert('View employeee based on age groups in console log, press F12.');
+}
+function objSalaryHike() {
+	var tempVALUE="<strong>INCREMENTS</strong><br />";
+	for(var i in employee) {
+		if(employee[i].salary <1000 && employee[i].age>20) {
+			employee[i].salary=parseInt(employee[i].salary)+parseInt(employee[i].salary)*5;
+			tempVALUE=tempVALUE+"Name: "+employee[i].name+" Age: "+employee[i].age+" Salary: "+employee[i].salary+" DOB: "+employee[i].dob+"<br />";
+		}
+			
+	}
+	document.getElementById("output").innerHTML=tempVALUE;
+}
+</script>
+</head>
+<body>
+<h2>Object Query</h2>
+<table>
+<tr>
+	<td>Name:</td>
+	<td><input type="text" id="txtName" /></td>
+</tr>
+<tr>
+	<td>Age:</td>
+	<td><input type="text" id="txtAge" /></td>
+</tr>
+<tr>
+	<td>Salary:</td>
+	<td><input type="text" id="txtSalary" /></td>
+</tr>
+<tr>
+	<td>DOB:</td>
+	<td><input type="text" id="txtDOB" /></td>
+</tr>
+<tr>
+	<td colspan="2"><input type="button" onClick="objCreate()" value="Create Object" /></td>
+</tr>
+</table>
+<br />
+<table>
+<tr>
+	<td>Display Employees</td>
+	<td>Employee Salary Greater 5000</td>
+	<td>Group By Age</td>
+	<td>Increment Salary 5%[Salary < 1000 & Age > 20]</td>
+</tr>
+<tr>
+	<td><input type="button" onClick="objDisplay()" value="Display Employee" /></td>
+	<td><input type="button" onClick="objSalaryG5000()" value="Fetch Details" /></td>
+	<td><input type="button" onClick="objGroupByAge()" value="Fetch Details" /></td>
+	<td><input type="button" onClick="objSalaryHike()" value="Fetch Details" /></td>
+</tr>
+</table>
+<p id="output"></p>
+</body>
+</html>
