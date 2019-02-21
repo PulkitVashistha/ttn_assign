@@ -52,7 +52,14 @@ public class Start {
         
         //Q9 :: Run Question9 File
         
-        Question10 Q10=Question10.getInstance();
+        //Just for Singleton Implementation
+        //Question10 Q10=Question10.getInstance();
+        //int tNumber=Q10.requestService();
+        //System.out.println("Your token number(order number) is: "+tNumber);
+        //Q10.processOrder();
+        //Q10.deliverService();
+        
+        Question10 Q10=new Question10();
         int tNumber=Q10.requestService();
         System.out.println("Your token number(order number) is: "+tNumber);
         Q10.processOrder();
@@ -63,10 +70,10 @@ public class Start {
         Q11.whileLoopCode();
         
         //Q12 :: Run Question12 File
-        */
         
         Question13 Q13=new Question13(5,0);
         Q13.calcResult();
+        */
         
         
     }

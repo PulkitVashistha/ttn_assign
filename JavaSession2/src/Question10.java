@@ -1,8 +1,12 @@
 import java.util.Scanner;
-
-public class Question10 {
-    private static Question10 st = new Question10();
-    private static int token_number=1001;
+abstract class CoffeeShop {
+    abstract int requestService();
+    abstract void processOrder();
+    abstract void deliverService();
+}
+public class Question10 extends CoffeeShop {
+    //private static Question10 st = new Question10();
+    private static int token_number=1000;
     private double order_amount;
     private boolean token_status;
     private  boolean payment_status;
@@ -10,7 +14,7 @@ public class Question10 {
     private int[] ready_queue;
     private final int MAX_ORDER;
     private Scanner In;
-    private static int o_count;
+    private static int o_count=-1;
     
     
     public Question10() {
@@ -23,26 +27,29 @@ public class Question10 {
     }
     
     
-    public static Question10 getInstance() {
+    /*public static Question10 getInstance() {
         return st;
-    }
+    }*/
     
+    @Override
     public int requestService() {
+        o_count++;
+        token_number++;
+        
         System.out.println("[Pay Bill] Enter amount: ");
         order_amount=In.nextLong();
         if(order_amount>=0) {
             order_queue[o_count]=token_number;
-            o_count++;
-            token_number++;
-            System.out.println("Order id "+token_number+" is in order queue, please wait.");
+            System.out.println("Order id "+order_queue[o_count]+" of amount "+order_amount +" is in order queue, please wait.");
             
-            return  token_number;
+            return  order_queue[o_count];
         } else {
             System.out.println("Amount not paid, try again.");
             return 0;
         }
     }
     
+    @Override
     public void processOrder() {
         if(order_queue.length>0) {
             for(int i=0;i<order_queue.length;i++) {
@@ -57,6 +64,7 @@ public class Question10 {
         }
     }
     
+    @Override
     public void deliverService() {
         if(ready_queue.length>0) {
             for(int i=0;i<ready_queue.length;i++) {
