@@ -18,9 +18,9 @@ class Student implements Comparable<Student> {
     
     @Override
     public int compareTo(Student S) {
-        if(age==S.age)
+        if(score==S.score)
             return name.compareTo(S.name);
-        else if(age>S.age)
+        else if(score>S.score)
             return 1;
         else
             return -1;
@@ -37,9 +37,9 @@ public class Question5 {
     public static void main(String[] args) {
         
         Student S1,S2,S3;
-        S1=new Student("Chandan",54564,21);
-        S2=new Student("Aditya",45786,26);
-        S3=new Student("Anil",65945,21);
+        S1=new Student("Chandan",55,21);
+        S2=new Student("Aditya",45,26);
+        S3=new Student("Anil",65,21);
         
         List<Student> list=new ArrayList<>();
         
