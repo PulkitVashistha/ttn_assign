@@ -1,18 +1,13 @@
-import java.sql.SQLOutput;
+import java.util.SortedMap;
 import java.util.Stack;
+import java.util.TreeMap;
+import java.util.Vector;
 
-class SpecialStack<T> {
+class SpecialStack<T> extends Vector<T> {
     private final int MAX;
     private final int MIN;
     private int CURR;
-    private T t;
-    //Just for Primitive Types
-    private Integer minIValue=0;
-    private Float minFValue=0.0f;
-    private Double minDValue=0.0;
-    private Long minLValue=0L;
-    //
-    private Stack<T> S=new Stack<>();
+    private SortedMap<T,Integer> sortedMap=new TreeMap<>();
     
     public SpecialStack(int max) {
         MAX=max;
@@ -21,46 +16,9 @@ class SpecialStack<T> {
     }
     
     public boolean push(T t) {
-        this.t=t;
         if(CURR<MAX) {
-            /**** Minimum Value Finding ****/
-            if(t instanceof Integer) {
-                if(minIValue==0) {
-                    minIValue=(Integer) t;
-                    System.out.println(minIValue);
-                } else {
-                    if(minIValue>(Integer) t) {
-                        minIValue=(Integer) t;
-                        System.out.println(minIValue);
-                    }
-                }
-            } else if(t instanceof Float) {
-                if(minFValue==0) {
-                    minFValue=(Float)t;
-                } else {
-                    if(minFValue>(Float) t) {
-                        minFValue=(Float) t;
-                    }
-                }
-            } else if(t instanceof Long) {
-                if(minLValue==0) {
-                    minLValue=(Long)t;
-                } else {
-                    if(minLValue>(Long)t) {
-                        minLValue=(Long)t;
-                    }
-                }
-            } else if(t instanceof Double) {
-                if(minDValue==0) {
-                    minDValue=(Double) t;
-                } else {
-                    if(minDValue>(Double) t) {
-                        minDValue=(Double) t;
-                    }
-                }
-            }
-            /****                       ****/
-            S.addElement(t);
+            sortedMap.put(t,CURR);
+            addElement(t);
             CURR++;
             return true;
         } else {
@@ -72,7 +30,9 @@ class SpecialStack<T> {
         if(CURR==MIN) {
             return false;
         } else {
-            S.removeElement(CURR);
+            sortedMap.remove(get(CURR-1));
+            System.out.println(sortedMap);
+            removeElement(CURR);
             CURR--;
             return true;
         }
@@ -94,21 +54,14 @@ class SpecialStack<T> {
         }
     }
     
-    public T getMin() {
+    public void getMin() {
         if(CURR==MIN) {
-            return null;
+        
         } else {
-            if(t instanceof Integer) {
-                return (T)minIValue;
-            } else if (t instanceof Float) {
-                return (T)minFValue;
-            } else if(t instanceof Double) {
-                return (T)minDValue;
-            } else if(t instanceof Long) {
-                return (T)minLValue;
-            }
+    
+            System.out.println(sortedMap.firstKey());
+            
         }
-        return null;
     }
     
 }
@@ -118,18 +71,20 @@ public class Question7 {
     public static void main(String[] args) {
         
         SpecialStack<Integer> specialStack=new SpecialStack<>(5);
-        System.out.println("Is Stack Empty: "+specialStack.isEmpty());
+        //System.out.println("Is Stack Empty: "+specialStack.isEmpty());
         specialStack.push(45);
         specialStack.push(25);
-        System.out.println("Is Stack Empty: "+specialStack.isEmpty());
-        System.out.println("Is Stack Full: "+specialStack.isFull());
-        specialStack.push(45);
+        //System.out.println("Is Stack Empty: "+specialStack.isEmpty());
+        //System.out.println("Is Stack Full: "+specialStack.isFull());
+        specialStack.push(7);
         specialStack.push(65);
-        specialStack.push(11);
-        System.out.println("Is Stack Full: "+specialStack.isFull());
-        boolean t=specialStack.push(22);
-        System.out.println("Status: "+t);
-        System.out.println((Integer)specialStack.getMin());
+        specialStack.push(2);
+        //System.out.println("Is Stack Full: "+specialStack.isFull());
+        //System.out.println("Minimum Before Pop: "+(Integer)specialStack.getMin());
+        specialStack.getMin();
+        specialStack.pop();
+        specialStack.getMin();
+        //System.out.println("Minimum After Pop: "+(Integer)specialStack.getMin());
     }
     
 }
