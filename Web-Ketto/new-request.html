@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Submit a request - Ketto</title>
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <link rel="shortcut icon" type="image/x-icon" href="resources/images/icon.png" />
+    <link rel="stylesheet" type="text/css" href="resources/styles/support-default-style.css" />
+    <script lang="javascript" type="text/javascript" src="resources/js/support-default.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+
+    <div class="head-border">
+        <header class="header">
+            <div id="top-logo">
+                <a href="/" title="Home">
+                    <img src="resources/images/logo.png" alt="Ketto Help Center home page" />
+                </a>    
+            </div>
+            <div id="menu">
+                <img onclick="openMenu()" src="resources/images/menu.png" id="btnMenu" name="btnMenu" width="30px" height="30px" alt="Menu" />
+                <a id="h-menu-item" href="new-request.html">Submit a request</a>
+                <a href="#SignIn">Sign in</a>
+            </div>
+        </header>
+    </div>
+
+    <section class="section">
+    
+        <article class="navigation">
+            <div class="nav-link">
+                <a href="support.html">Ketto</a>&nbsp;>&nbsp;Submit a request
+            </div>
+            <div class="nav-search">
+                <form action="" method="post">
+                    <input type="search" name="txtSearch" placeholder="Search" autocomplete="true" />
+                </form>
+            </div>
+        </article>
+
+        <div class="form-head">Submit a request</div>
+        <form method="POST" action="">
+        <article class="request-form">
+            <div>
+                <label for="txtEmail">Your email address <span>*</span></label>
+                <input type="email" name="txtEmail" class="input-box" required />
+            </div>
+            <div>
+                <label for="txtSubject">Subject <span>*</span></label>
+                <input type="text" name="txtSubject" class="input-box" required />
+            </div>
+            <div>
+                <label for="txtDescription">Description <span>*</span></label>
+                <textarea name="txtDescription" class="input-box multiline" required></textarea>
+                <p>Please enter the details of your request. A member of our support staff will respond as soon as possible.</p>
+            </div>
+            <div>
+                <label>Attachments</label>
+                <div class="custom-upload input-box">
+                    <label for="Attachments"><i class="fa fa-paperclip"></i>&nbsp;<span>Add files</span> or drop files here</label>
+                    <input type="file" name="txtAttachments" id="Attachments" class="hide" required />
+                </div>
+            </div>
+            <div>
+                <input type="submit" class="button-box" value="Submit" name="btnSubmit" />     
+            </div>
+        </form>
+        </article>
+
+    </section>
+
+    <footer class="footer">
+        <a href="support.html"><p class="f-title">Ketto</p></a>
+    </footer>
+
+    <div id="support-stamp"><i class="fa fa-question-circle-o" style="font-size: 20px;"></i>&nbsp;Support</div>
+
+</body>
+</html>

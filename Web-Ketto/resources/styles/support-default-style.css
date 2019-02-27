@@ -1,4 +1,6 @@
 * {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    -webkit-font-smoothing: antialiased;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -180,6 +182,122 @@ input[type="search"] {
     width: 125px;
 }
 
+/******* New Request Page **********/
+
+.head-border {
+    border-bottom: 1px solid #ddd;
+}
+
+.navigation {
+    width: 85%;
+    margin: 30px auto;
+    display: flex;
+    height: 50px;
+    line-height: 50px;
+    vertical-align: middle;
+}
+
+.nav-link {
+    width: 50%;
+    text-align: left;
+}
+
+.nav-search {
+    width: 50%;
+    text-align: right;
+}
+
+.nav-search input[type="search"] {
+    width: 50%;
+}
+
+.form-head {
+    width: 85%;
+    font-size: 28px;
+    text-align: left;
+    margin: 30px auto;
+}
+
+.request-form {
+    width: 85%;
+    margin: 20px auto;
+}
+
+.request-form > div {
+    width: 50%;
+    text-align: left;
+    margin: 20px;
+}
+
+.request-form div label {
+    display: block;
+    margin-bottom: 5px;
+
+}
+
+.request-form div p {
+    font-size: 12px;
+    color: #666;
+    margin: 5px 0;
+}
+
+.request-form span {
+    color: red;
+}
+
+.request-form label {
+    text-align: left;
+}
+
+.input-box {
+    width: 100%;
+    height: 40px;
+    border: 1px solid rgba(1, 191, 189, 1);
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.button-box {
+    margin-top: 30px;
+    width: 100%;
+    height: 40px;
+    background-color:  rgba(1, 191, 189, 1);
+    border: 0px;
+    color: white;
+    font-size: 15px;
+    border-radius: 5px;
+    padding-left: 10px;
+}
+
+.hide {
+    display: none;
+}
+
+.custom-upload {
+    border: 1px solid rgba(1, 191, 189, 1);
+    cursor: pointer;
+}
+
+.custom-upload label {
+    cursor: pointer;
+    text-align: center;
+    vertical-align: middle;
+    line-height: 40px;
+}
+
+.custom-upload span {
+    color: rgba(1, 191, 189, 1);
+}
+
+.multiline {
+    resize: vertical;
+    outline: none;
+    overflow: auto;
+    height: 100px;
+}
+
+/*****************************/
+
 @media only screen and (max-width: 900px) {
     .header {
         display: flex;
@@ -268,6 +386,74 @@ input[type="search"] {
         padding-left: 20px;
         padding-right: 20px;
     }
+
+    /******* New Request Page **********/
+
+    .navigation {
+        width: 100%;
+        display: block;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .nav-link {
+        width: 100%;
+        text-align: left;
+    }
+
+    .nav-search {
+        width: 100%;
+        text-align: center;
+    }
+
+    .nav-search input[type="search"] {
+        width: 90%;
+    }
+
+    .form-head {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+        margin-top: 100px;
+    }
+
+    .request-form {
+        width: 100%;
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+
+    .request-form > div {
+        width: 100%;
+        text-align: left;
+        margin: 20px;
+    }
+
+    .request-form div label {
+        display: block;
+        margin-bottom: 5px;
+
+    }
+
+    .input-box {
+        width: 90%;
+        height: 40px;
+        border: 1px solid rgba(1, 191, 189, 1);
+        border-radius: 5px;
+        padding-left: 10px;
+    }
+
+    .button-box {
+        margin-top: 30px;
+        width: 90%;
+        height: 40px;
+    }
+
+    .multiline {
+        height: 100px;
+    }
+
+    /*****************************/
 
 }
 
