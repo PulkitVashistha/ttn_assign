@@ -1,0 +1,5 @@
+task othertask{
+    doLast {
+        println "Task executed from tasks.gradle"
+    }
+}
