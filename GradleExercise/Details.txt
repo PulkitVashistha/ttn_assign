@@ -75,4 +75,4 @@ dependencies {
 
 <b>Solution:</b>
 
-apply from : 'tasks.gradle'
+apply from : 'mytasks.gradle'
