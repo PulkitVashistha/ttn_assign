@@ -76,3 +76,5 @@ dependencies {
 <b>Solution:</b>
 
 apply from : 'mytasks.gradle'
+
+//It can be called using ::   <b>taskname</b> anywhere in the build.gradle
