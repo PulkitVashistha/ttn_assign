@@ -1,0 +1,8 @@
+com/ttn/sling/project/core/service/StudImpl.class
+com/ttn/sling/project/core/service/ClassConfigService.class
+com/ttn/sling/project/core/service/GoogleGson.class
+com/ttn/sling/project/core/service/Student.class
+com/ttn/sling/project/core/service/ClassConfig.class
+com/ttn/sling/project/core/service/StudentConfigService.class
+com/ttn/sling/project/core/service/ClassImpl.class
+com/ttn/sling/project/core/service/StudentConfig.class

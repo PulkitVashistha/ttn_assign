@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metatype:MetaData xmlns:metatype="http://www.osgi.org/xmlns/metatype/v1.2.0" localization="OSGI-INF/l10n/com.ttn.sling.project.core.service.StudentConfigService">
+  <OCD id="com.ttn.sling.project.core.service.StudentConfigService" name="Student Config Service" description="Student Configuration Service">
+    <AD id="configValue" type="String" name="Config value" default="idx"/>
+  </OCD>
+  <Designate pid="com.ttn.sling.project.core.service.StudImpl">
+    <Object ocdref="com.ttn.sling.project.core.service.StudentConfigService"/>
+  </Designate>
+</metatype:MetaData>
