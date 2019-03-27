@@ -46,13 +46,18 @@
 <p  class="answer">
 	<strong>Solution</strong><br />
 	<div>
+	<span style="color: Green">Through System Console: </span><br />
+	http://localhost:4502/system/console/status-slingsettings
+	<br />
+	<span style="color: Green">Through Java Classes: </span><br />
 	String runmode=sling.getService(SlingSettingsService.class).getRunModes().toString();
 	<br />
-	<span style="color: Green">This above method can be used in java to identify the runmode.</span>
-	<br />
+	<span style="color: Green">OR</span>
 	<%<br />
 		pageContext.setAttribute("runModes", sling.getService(SlingSettingsService.class).getRunModes().toString());
 	<br />%>
+	<br /><br />
+	<img src="q2.png" alt="Find image file on git hub." width="80%" height="500px" />
 	</div>
 </p>
 
