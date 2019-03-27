@@ -1,0 +1,98 @@
+<html>
+<head>
+<title>AEM Introduction Exercise</title>
+<style>
+	body {
+		width: 90%;
+		margin: 0px auto;
+	}
+	.question {
+		font-size: 20px;
+		color: Tomato;
+	}
+	.answer {
+		font-size: 18px;
+		color: slateBlue;
+	}
+	div {
+		background-color: #E2EAF0;
+		color: darkBlue;
+		border: 1px solid black;
+		font-size: 16px;
+		clear: both;
+		width: 80%;
+		margin: 0px auto;
+	}
+</style>
+</head>
+<body>
+
+
+<p class="question">
+	<strong>Q1.</strong> Open AEM in debug mode.
+</p>
+<p  class="answer">
+	<strong>Solution</strong><br />
+	<div>
+	java -jar cq-quickstart-6.4.0.jar -fork -forkargs -- -Xdebug -Xrunjdwp:transport=dt_socket,address=59865,suspend=n,server=y -Xmx1520m -XX:MaxPermSize=512m -XX:-UseSplitVerifier
+	<br /><br />
+	<img src="q1.png" alt="Find image file on git hub." width="80%" height="500px" />
+	</div>
+</p>
+
+<p class="question">
+	<strong>Q2.</strong> How to identify if AEM is Publish or Author?
+</p>
+<p  class="answer">
+	<strong>Solution</strong><br />
+	<div>
+	String runmode=sling.getService(SlingSettingsService.class).getRunModes().toString();
+	<br />
+	<span style="color: Green">This above method can be used in java to identify the runmode.</span>
+	<br />
+	<%<br />
+		pageContext.setAttribute("runModes", sling.getService(SlingSettingsService.class).getRunModes().toString());
+	<br />%>
+	</div>
+</p>
+
+<p class="question">
+	<strong>Q3.</strong> Where are all the bundles installed in AEM resides in system? Search for bundle “com.adobe.granite.ui.clientlibs” and decompile it.
+</p>
+<p  class="answer">
+	<strong>Solution</strong><br />
+	<div>
+	<br />
+	<strong>AEM Bundle Path:</strong> /home/shubham/AEM 6.4/AEM.Author/crx-quickstart/launchpad/felix
+	<br /><br />
+	<img src="q3.png" alt="Find image file on git hub." width="80%" height="500px" />
+	<br />
+	<strong>com.adobe.granite.ui.clientlibs Bundle in AEM, screesnhot image is attached below.</strong>
+	<br /><br />
+	<img src="q3a.png" alt="Find image file on git hub." width="80%" height="500px" />
+	</div>
+</p>
+
+<p class="question">
+	<strong>Q4.</strong> How can we specify in the command line the ‘port’ and ‘host’ while installing the project.
+</p>
+<p  class="answer">
+	<strong>Solution</strong><br />
+	<div>
+	mvn clean install -PautoInstallPackage -Daem.host=127.0.0.1 -Daem.port=4502
+	<br /><br />
+	<img src="q4.png" alt="Find image file on git hub." width="80%" height="500px" />
+	</div>
+</p>
+
+<p class="question">
+	<strong>Q5.</strong> Why do we specify SNAPSHOT in the project version?
+</p>
+<p  class="answer">
+	<strong>Solution</strong><br />
+	<div>
+	A snapshot version in Maven is one that has not been released.<br />
+	The idea is that before a 1.0 release is done, there exists a 1.0-SNAPSHOT. That version is what might become 1.0. It's basically "1.0 under development".
+	</div>
+</p>
+
