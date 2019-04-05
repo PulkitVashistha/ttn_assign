@@ -2,7 +2,6 @@ package com.ttn.sling.project.core.service;
 
 import org.osgi.service.component.annotations.Activate;
 import org.osgi.service.component.annotations.Component;
-import org.osgi.service.component.annotations.Modified;
 import org.osgi.service.component.annotations.Reference;
 import org.osgi.service.metatype.annotations.Designate;
 import org.slf4j.Logger;
@@ -11,21 +10,20 @@ import org.slf4j.LoggerFactory;
 import java.util.ArrayList;
 import java.util.List;
 
-@Component(immediate = true,service = ClassConfig.class)
+@Component(immediate = true, service = ClassConfig.class)
 @Designate(ocd= ClassConfigService.class)
 public class ClassImpl implements ClassConfig {
 
     private Logger logger = LoggerFactory.getLogger(this.getClass());
 
-    int MAX_STUDENT;
-    int PASS_MARKS;
+    //@Reference
+    ClassConfigService classConfigService;
 
     @Override
-    public boolean isClassLimitReached(List<Student> list) {
+    public boolean isClassLimitReached(int list_size) {
 
-        int list_size=list.size();
 
-        if(list_size<=MAX_STUDENT) {
+        if(list_size<=classConfigService.getMaxStudent()) {
             return true;
         }
 
@@ -33,17 +31,18 @@ public class ClassImpl implements ClassConfig {
     }
 
     @Override
-    public int getPassingMarks(ClassConfigService classConfigService) {
-        return PASS_MARKS;
+    public int getPassingMarks() {
+        return classConfigService.getPassMarks();
     }
 
     @Activate
     public void activateMethod(ClassConfigService classConfigService) {
+
+        this.classConfigService=classConfigService;
+
         logger.info("\n\nClass Configuration Service Activated.\n");
 
-        MAX_STUDENT=classConfigService.getMaxStudent();
-        PASS_MARKS=classConfigService.getPassMarks();
-
+        //The blow code is for testing perpose only
         List<Student> list=new ArrayList<>();
 
         list.add(new Student(1,"Shubham",85,24));
@@ -51,11 +50,11 @@ public class ClassImpl implements ClassConfig {
         list.add(new Student(3,"Satyam",35,25));
         list.add(new Student(4,"Prakash",40,23));
 
-        boolean classLimitReached=isClassLimitReached(list);
-        int passingMarks=getPassingMarks(classConfigService);
-
+        boolean classLimitReached=isClassLimitReached(list.size());
+        int passingMarks=getPassingMarks();
 
         logger.info("\n\nClass Implementation: isClassLimitReached:: "+classLimitReached+" getPassingMarks:: "+passingMarks+"\n\n");
+
     }
 
 

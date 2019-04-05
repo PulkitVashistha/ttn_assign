@@ -1,9 +1,9 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1552940332740
+Bnd-LastModified: 1554491711580
 Bundle-ManifestVersion: 2
 Bundle-Name: osgiDemo
 Bundle-SymbolicName: osgiDemo
-Bundle-Version: 1.0.0.201903182018
+Bundle-Version: 1.0.0.201904051915
 Created-By: 1.8.0_202 (Amazon.com Inc.)
 Import-Package: org.slf4j;version="[1.7,2)"
 Private-Package: com.ttn.sling.project.core.service

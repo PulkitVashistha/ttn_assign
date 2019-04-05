@@ -4,5 +4,6 @@
   <service>
     <provide interface="com.ttn.sling.project.core.service.StudentConfig"/>
   </service>
-  <property name="configValue" type="String" value="idx"/>
+  <property name="getMaxStudent" type="Integer" value="15"/>
+  <property name="getPassMarks" type="Integer" value="30"/>
 </scr:component>

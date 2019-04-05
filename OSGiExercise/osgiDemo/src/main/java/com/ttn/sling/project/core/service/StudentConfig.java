@@ -1,5 +1,7 @@
 package com.ttn.sling.project.core.service;
 
+import com.ttn.sling.project.core.service.Student;
+
 import java.util.List;
 
 public interface StudentConfig {

@@ -6,5 +6,4 @@
   </service>
   <property name="getMaxStudent" type="Integer" value="15"/>
   <property name="getPassMarks" type="Integer" value="30"/>
-  <property name="configValue" type="String" value="idx"/>
 </scr:component>
